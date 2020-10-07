@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet private var loginCustomButton: CustomButton!
-    @IBOutlet weak var mainViewContainerCenterY: NSLayoutConstraint!
     
     var loginButton = CustomButton()
     var emailTextField = UITextField()
@@ -165,9 +164,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     func addActionToLoginButton(_ sender: CustomButton) {
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        
 
     }
+    
     
     func login() throws {
         
@@ -185,8 +184,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if password.count < 8 {
             throw LoginError.incorrectPasswordLength
         }
-        
-
     }
     
     
